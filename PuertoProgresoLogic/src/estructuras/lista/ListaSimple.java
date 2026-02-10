@@ -1,6 +1,7 @@
 package estructuras.lista;
 
 import estructuras.nodo.NodoSimple;
+import modelos.Producto;
 
 public class ListaSimple {
     private NodoSimple cabeza;
@@ -31,4 +32,14 @@ public class ListaSimple {
             aux = aux.siguiente;
         }
     }
+
+    public double calcularPeso() {
+    double total = 0;
+    NodoSimple aux = cabeza;
+    while (aux != null) {
+        Producto p = (Producto) aux.dato;
+        total += p.getPeso();
+        aux = aux.siguiente;
+    }
+    return total;
 }
