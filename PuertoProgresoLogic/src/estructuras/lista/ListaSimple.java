@@ -19,7 +19,8 @@ public class ListaSimple {
     public boolean buscar(Object dato) {
         NodoSimple aux = cabeza;
         while (aux != null) {
-            if (aux.dato.equals(dato)) return true;
+            if (aux.dato.equals(dato))
+                return true;
             aux = aux.siguiente;
         }
         return false;
@@ -34,12 +35,13 @@ public class ListaSimple {
     }
 
     public double calcularPeso() {
-    double total = 0;
-    NodoSimple aux = cabeza;
-    while (aux != null) {
-        Producto p = (Producto) aux.dato;
-        total += p.getPeso();
-        aux = aux.siguiente;
+        double total = 0;
+        NodoSimple aux = cabeza;
+        while (aux != null) {
+            Producto p = (Producto) aux.dato;
+            total += p.getPeso();
+            aux = aux.siguiente;
+        }
+        return total;
     }
-    return total;
 }
