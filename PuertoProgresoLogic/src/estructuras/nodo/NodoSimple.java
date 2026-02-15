@@ -8,9 +8,9 @@ public class NodoSimple {
     public NodoSimple siguiente;
 
     /**
-     * Crea un nodo con dato y siguiente nulo.
-     *
-     * @param dato valor a almacenar.
+     * - Parámetros de entrada: dato que se desea almacenar en el nodo.
+     * - Salida: NodoSimple con el campo dato asignado y el enlace siguiente en null.
+     * - Propósito: Servir como unidad básica para estructuras lineales simples (cola, pila, lista simple).
      */
     public NodoSimple(Object dato) {
         this.dato = dato;

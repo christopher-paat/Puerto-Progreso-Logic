@@ -5,14 +5,15 @@ import modelos.Camion;
 import utils.Entrada;
 
 /**
- * Modulo de recepcion de camiones (colas).
+ * Módulo de recepción de camiones (colas).
  */
 public class ModuloRecepcion {
     private Cola colaCamiones = new Cola();
 
     /**
-     * Muestra el menu de recepcion y procesa opciones.
-     * Salida: flujo interactivo por consola.
+     * - Parámetros de entrada: Ninguno.
+     * - Salida: Ninguna (void); se gestiona un flujo interactivo por consola.
+     * - Propósito: Presentar y controlar el menú de recepción de camiones usando la cola FIFO.
      */
     public void menu() {
         int opcion;
@@ -31,14 +32,15 @@ public class ModuloRecepcion {
                 case 2 -> ingresar();
                 case 3 -> verProximo();
                 case 4 -> listar();
-                default -> System.out.println("Opcion invalida");
+                default -> System.out.println("Opción inválida");
             }
         } while (opcion != 5);
     }
 
     /**
-     * Registra un camion en la cola de espera.
-     * Salida: cola actualizada.
+     * - Parámetros de entrada: Ninguno; los datos del camión se leen desde consola.
+     * - Salida: Ninguna (void); la cola de camiones queda actualizada.
+     * - Propósito: Registrar un nuevo camión que llega al puerto y colocarlo en la cola de espera.
      */
     private void registrar() {
         System.out.print("Placa: ");
@@ -51,8 +53,9 @@ public class ModuloRecepcion {
     }
 
     /**
-     * Atiende al siguiente camion en la cola.
-     * Salida: impresion del camion atendido.
+     * - Parámetros de entrada: Ninguno.
+     * - Salida: Ninguna (void); se muestra por consola el camión atendido si existe.
+     * - Propósito: Dar ingreso al siguiente camión en turno retirándolo de la cola de recepción.
      */
     private void ingresar() {
         Camion c = despacharCamion();
@@ -61,43 +64,45 @@ public class ModuloRecepcion {
     }
 
     /**
-     * Muestra el proximo camion en turno.
-     * Salida: impresion en consola.
+     * - Parámetros de entrada: Ninguno.
+     * - Salida: Ninguna (void); se imprime el camión que está en el frente de la cola.
+     * - Propósito: Consultar cuál es el próximo camión que será atendido sin retirarlo de la cola.
      */
     private void verProximo() {
         System.out.println("Próximo: " + colaCamiones.peek());
     }
 
     /**
-     * Lista todos los camiones en espera.
-     * Salida: impresion en consola.
+     * - Parámetros de entrada: Ninguno.
+     * - Salida: Ninguna (void); se listan en consola todos los camiones en espera.
+     * - Propósito: Visualizar el estado completo de la cola de recepción de camiones.
      */
     private void listar() {
         colaCamiones.listar();
     }
 
     /**
-     * Obtiene la cantidad de camiones en espera.
-     *
-     * @return total en cola.
+     * - Parámetros de entrada: Ninguno.
+     * - Salida: Número total de camiones actualmente en la cola.
+     * - Propósito: Consultar la cantidad de transporte pendiente de ser atendido en recepción.
      */
     public int getEnEspera() {
         return colaCamiones.getTamaño();
     }
 
     /**
-     * Obtiene el camion en turno sin retirarlo.
-     *
-     * @return camion en el frente o null.
+     * - Parámetros de entrada: Ninguno.
+     * - Salida: Camión ubicado en el frente de la cola o null si no hay camiones.
+     * - Propósito: Saber qué camión será atendido a continuación sin modificar la cola.
      */
     public Camion getProximo() {
         return (Camion) colaCamiones.peek();
     }
 
     /**
-     * Retira y devuelve el proximo camion en la cola.
-     *
-     * @return camion despachado o null si no hay.
+     * - Parámetros de entrada: Ninguno.
+     * - Salida: Camión retirado de la cola o null si no hay camiones.
+     * - Propósito: Despachar el siguiente camión en espera para que pueda ingresar al patio.
      */
     public Camion despacharCamion() {
         return (Camion) colaCamiones.dequeue();

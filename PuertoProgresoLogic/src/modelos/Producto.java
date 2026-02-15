@@ -9,11 +9,9 @@ public class Producto {
     private double peso;
 
     /**
-     * Crea un producto con datos basicos.
-     *
-     * @param id identificador del producto.
-     * @param nombre nombre del producto.
-     * @param peso peso en kg.
+     * - Parámetros de entrada: id único del producto, nombre descriptivo y peso en kilogramos.
+     * - Salida: Objeto Producto inicializado con sus datos básicos.
+     * - Propósito: Representar un ítem de carga individual dentro de un contenedor.
      */
     public Producto(int id, String nombre, double peso) {
         this.id = id;
@@ -22,57 +20,54 @@ public class Producto {
     }
 
     /**
-     * Obtiene el id del producto.
-     *
-     * @return id actual.
+     * - Parámetros de entrada: Ninguno.
+     * - Salida: Identificador numérico actual del producto.
+     * - Propósito: Consultar el id usado para referenciar el producto en búsquedas.
      */
     public int getId() {
         return id;
     }
 
     /**
-     * Actualiza el id del producto.
-     * Salida: estado actualizado.
-     *
-     * @param id nuevo id.
+     * - Parámetros de entrada: id con el nuevo identificador del producto.
+     * - Salida: Ninguna (void); el estado interno del objeto se actualiza.
+     * - Propósito: Cambiar el identificador asociado al producto cuando se requiera.
      */
     public void setId(int id) {
         this.id = id;
     }
 
     /**
-     * Obtiene el nombre del producto.
-     *
-     * @return nombre actual.
+     * - Parámetros de entrada: Ninguno.
+     * - Salida: Nombre actual del producto.
+     * - Propósito: Consultar la descripción textual del ítem de carga.
      */
     public String getNombre() {
         return nombre;
     }
 
     /**
-     * Actualiza el nombre del producto.
-     * Salida: estado actualizado.
-     *
-     * @param nombre nuevo nombre.
+     * - Parámetros de entrada: nombre con la nueva descripción del producto.
+     * - Salida: Ninguna (void); se actualiza el campo nombre.
+     * - Propósito: Modificar el nombre con el que se identifica al producto.
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
     /**
-     * Actualiza el peso del producto.
-     * Salida: estado actualizado.
-     *
-     * @param peso nuevo peso.
+     * - Parámetros de entrada: peso con el nuevo valor en kilogramos.
+     * - Salida: Ninguna (void); se actualiza el peso del producto.
+     * - Propósito: Ajustar el peso registrado del ítem cuando cambian los datos de la carga.
      */
     public void setPeso(double peso) {
         this.peso = peso;
     }
 
     /**
-     * Obtiene el peso del producto.
-     *
-     * @return peso actual.
+     * - Parámetros de entrada: Ninguno.
+     * - Salida: Peso actual del producto en kilogramos.
+     * - Propósito: Consultar el peso individual que aporta el producto al contenedor.
      */
     public double getPeso() {
         return peso;

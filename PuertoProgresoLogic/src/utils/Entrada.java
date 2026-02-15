@@ -3,16 +3,15 @@ package utils;
 import java.util.Scanner;
 
 /**
- * Utilidad para lectura de entradas de consola con validacion basica.
+ * Utilidad para lectura de entradas de consola con validación básica.
  */
 public class Entrada {
     private static Scanner sc = new Scanner(System.in);
 
     /**
-     * Lee un entero desde la entrada estandar.
-     * Salida: valor entero valido.
-     *
-     * @return entero leido.
+     * - Parámetros de entrada: Ninguno; el valor se lee desde la entrada estándar.
+     * - Salida: Entero válido obtenido a partir de la lectura de consola.
+     * - Propósito: Leer opciones numéricas del usuario con validación básica.
      */
     public static int leerInt() {
         while (true) {
@@ -23,16 +22,15 @@ public class Entrada {
             try {
                 return Integer.parseInt(line);
             } catch (NumberFormatException ex) {
-                System.out.print("Entrada invalida. Intente de nuevo: ");
+                System.out.print("Entrada inválida. Intente de nuevo: ");
             }
         }
     }
 
     /**
-     * Lee un texto no vacio desde la entrada estandar.
-     * Salida: cadena no vacia.
-     *
-     * @return texto leido.
+     * - Parámetros de entrada: Ninguno; el texto se captura desde la entrada estándar.
+     * - Salida: Cadena no vacía introducida por el usuario.
+     * - Propósito: Obtener textos desde consola evitando entradas vacías.
      */
     public static String leerTexto() {
         while (true) {
@@ -40,15 +38,14 @@ public class Entrada {
             if (!line.isEmpty()) {
                 return line;
             }
-            System.out.print("Entrada vacia. Intente de nuevo: ");
+            System.out.print("Entrada vacía. Intente de nuevo: ");
         }
     }
 
     /**
-     * Lee un numero decimal desde la entrada estandar.
-     * Salida: valor double valido.
-     *
-     * @return numero double leido.
+     * - Parámetros de entrada: Ninguno; el número se ingresa por consola.
+     * - Salida: Valor double válido leído desde la entrada estándar.
+     * - Propósito: Capturar cantidades decimales (como pesos) con validación básica de formato.
      */
     public static double leerDouble() {
         while (true) {
@@ -59,7 +56,7 @@ public class Entrada {
             try {
                 return Double.parseDouble(line);
             } catch (NumberFormatException ex) {
-                System.out.print("Entrada invalida. Intente de nuevo: ");
+                System.out.print("Entrada inválida. Intente de nuevo: ");
             }
         }
     }

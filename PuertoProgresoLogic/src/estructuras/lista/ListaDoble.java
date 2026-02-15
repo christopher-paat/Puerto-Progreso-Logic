@@ -4,7 +4,7 @@ import estructuras.nodo.NodoDoble;
 import modelos.Parada;
 
 /**
- * Lista doblemente ligada para rutas de distribucion.
+ * Lista doblemente ligada para rutas de distribución.
  */
 public class ListaDoble {
     private NodoDoble cabeza;
@@ -13,7 +13,9 @@ public class ListaDoble {
     private NodoDoble actual;
 
     /**
-     * Crea una lista doble vacia.
+     * - Parámetros de entrada: Ninguno.
+     * - Salida: Objeto ListaDoble inicializado y vacío.
+     * - Propósito: Crear la estructura que representará la ruta de distribución con sus paradas.
      */
     public ListaDoble() {
         cabeza = cola = null;
@@ -22,10 +24,9 @@ public class ListaDoble {
     }
 
     /**
-     * Inserta un dato al final de la lista.
-     * Salida: lista actualizada.
-     *
-     * @param dato elemento a insertar.
+     * - Parámetros de entrada: dato a insertar (normalmente una instancia de Parada).
+     * - Salida: Ninguna (void); la lista se actualiza agregando el nodo al final.
+     * - Propósito: Registrar una nueva parada al final de la ruta de distribución.
      */
     public void insertarFinal(Object dato) {
         NodoDoble nuevo = new NodoDoble(dato);
@@ -40,8 +41,9 @@ public class ListaDoble {
     }
 
     /**
-     * Recorre la lista de inicio a fin e imprime elementos.
-     * Salida: impresion en consola.
+     * - Parámetros de entrada: Ninguno.
+     * - Salida: Ningún valor de retorno; se imprimen los elementos de la lista en consola.
+     * - Propósito: Mostrar la ruta completa recorriendo las paradas de inicio a fin.
      */
     public void recorrerAdelante() {
         NodoDoble aux = cabeza;
@@ -52,8 +54,9 @@ public class ListaDoble {
     }
 
     /**
-     * Recorre la lista de fin a inicio e imprime elementos.
-     * Salida: impresion en consola.
+     * - Parámetros de entrada: Ninguno.
+     * - Salida: Ningún valor de retorno; se imprimen las paradas desde el final hacia el inicio.
+     * - Propósito: Mostrar la ruta invertida recorriendo las paradas de fin a inicio.
      */
     public void recorrerAtras() {
         NodoDoble aux = cola;
@@ -64,29 +67,27 @@ public class ListaDoble {
     }
 
     /**
-     * Obtiene la cantidad total de elementos.
-     *
-     * @return tamanio de la lista.
+     * - Parámetros de entrada: Ninguno.
+     * - Salida: Número total de elementos almacenados en la lista doble.
+     * - Propósito: Conocer cuántas paradas componen actualmente la ruta de distribución.
      */
     public int getTamaño() {
         return tamaño;
     }
 
     /**
-     * Obtiene el primer elemento de la lista.
-     *
-     * @return dato en la cabeza o null si esta vacia.
+     * - Parámetros de entrada: Ninguno.
+     * - Salida: Dato almacenado en la cabeza de la lista o null si está vacía.
+     * - Propósito: Obtener la primera parada programada en la ruta.
      */
     public Object getPrimero() {
         return cabeza == null ? null : cabeza.dato;
     }
 
     /**
-     * Inserta un dato despues de una parada con nombre indicado.
-     *
-     * @param nombreRef nombre de referencia.
-     * @param dato dato a insertar.
-     * @return true si se inserto; false si no se encontro la referencia.
+     * - Parámetros de entrada: nombreRef de la parada de referencia y dato a insertar después de ella.
+     * - Salida: true si se logró insertar la nueva parada; false si la referencia no existe.
+     * - Propósito: Permitir insertar una parada de emergencia o adicional entre dos paradas existentes.
      */
     public boolean insertarDespuesDeNombre(String nombreRef, Object dato) {
         NodoDoble aux = cabeza;
@@ -114,10 +115,9 @@ public class ListaDoble {
     }
 
     /**
-     * Elimina la primera parada que coincida con el nombre.
-     *
-     * @param nombre nombre de la parada a eliminar.
-     * @return true si se elimino; false si no se encontro.
+     * - Parámetros de entrada: nombre de la parada que se desea eliminar de la ruta.
+     * - Salida: true si se encontró y eliminó la parada; false en caso contrario.
+     * - Propósito: Cancelar una parada específica de la ruta de distribución.
      */
     public boolean eliminarPorNombre(String nombre) {
         NodoDoble aux = cabeza;
@@ -150,26 +150,27 @@ public class ListaDoble {
     }
 
     /**
-     * Inicializa el puntero de recorrido en la cabeza.
-     * Salida: estado interno actualizado.
+     * - Parámetros de entrada: Ninguno.
+     * - Salida: Ninguna (void); se posiciona el puntero interno en la cabeza de la lista.
+     * - Propósito: Preparar la lista para simular el recorrido de la ruta desde la primera parada.
      */
     public void iniciarRecorrido() {
         actual = cabeza;
     }
 
     /**
-     * Devuelve el elemento actual del recorrido.
-     *
-     * @return dato actual o null si no hay recorrido.
+     * - Parámetros de entrada: Ninguno.
+     * - Salida: Dato asociado al nodo actual o null si no hay recorrido iniciado.
+     * - Propósito: Conocer la parada en la que se encuentra actualmente el recorrido de la ruta.
      */
     public Object getActual() {
         return actual == null ? null : actual.dato;
     }
 
     /**
-     * Avanza el puntero al siguiente elemento.
-     *
-     * @return dato actual despues de avanzar o null si no hay recorrido.
+     * - Parámetros de entrada: Ninguno.
+     * - Salida: Dato del nodo en el que queda el puntero tras avanzar, o null si no hay recorrido.
+     * - Propósito: Moverse a la siguiente parada de la ruta durante la simulación de recorrido.
      */
     public Object avanzar() {
         if (actual == null) {
@@ -182,9 +183,9 @@ public class ListaDoble {
     }
 
     /**
-     * Retrocede el puntero al elemento anterior.
-     *
-     * @return dato actual despues de retroceder o null si no hay recorrido.
+     * - Parámetros de entrada: Ninguno.
+     * - Salida: Dato del nodo en el que queda el puntero tras retroceder, o null si no hay recorrido.
+     * - Propósito: Moverse a la parada anterior de la ruta durante la simulación de recorrido.
      */
     public Object retroceder() {
         if (actual == null) {

@@ -5,14 +5,15 @@ import modelos.Parada;
 import utils.Entrada;
 
 /**
- * Modulo de rutas de distribucion (lista doble).
+ * Módulo de rutas de distribución (lista doble).
  */
 public class ModuloRutas {
     private ListaDoble ruta = new ListaDoble();
 
     /**
-     * Muestra el menu de rutas y procesa opciones.
-     * Salida: flujo interactivo por consola.
+     * - Parámetros de entrada: Ninguno.
+     * - Salida: Ninguna (void); se gestiona un flujo interactivo por consola.
+     * - Propósito: Presentar y controlar el menú de rutas de distribución basado en lista doble.
      */
     public void menu() {
         int op;
@@ -31,14 +32,15 @@ public class ModuloRutas {
                 case 2 -> insertarEntre();
                 case 3 -> cancelar();
                 case 4 -> simular();
-                default -> System.out.println("Opcion invalida");
+                default -> System.out.println("Opción inválida");
             }
         } while (op != 5);
     }
 
     /**
-     * Agrega una parada al final de la ruta.
-     * Salida: lista actualizada.
+     * - Parámetros de entrada: Ninguno; el nombre de la parada se lee desde consola.
+     * - Salida: Ninguna (void); la lista de paradas se actualiza.
+     * - Propósito: Añadir una nueva parada al final de la ruta de distribución.
      */
     private void agregar() {
         System.out.print("Nombre parada: ");
@@ -46,8 +48,9 @@ public class ModuloRutas {
     }
 
     /**
-     * Inserta una parada despues de otra existente.
-     * Salida: lista actualizada si se encontro referencia.
+     * - Parámetros de entrada: Ninguno; se leen desde consola la parada de referencia y la nueva parada.
+     * - Salida: Ninguna (void); se informa por consola si la inserción fue exitosa.
+     * - Propósito: Insertar una parada intermedia (por ejemplo, de emergencia) entre destinos existentes.
      */
     private void insertarEntre() {
         System.out.print("Insertar despues de: ");
@@ -60,8 +63,9 @@ public class ModuloRutas {
     }
 
     /**
-     * Elimina una parada por nombre.
-     * Salida: lista actualizada si existe.
+     * - Parámetros de entrada: Ninguno; el nombre de la parada a cancelar se lee desde consola.
+     * - Salida: Ninguna (void); se indica por consola si la parada fue encontrada y eliminada.
+     * - Propósito: Cancelar una parada de la ruta cuando ya no es necesaria.
      */
     private void cancelar() {
         System.out.print("Nombre de parada a cancelar: ");
@@ -71,12 +75,13 @@ public class ModuloRutas {
     }
 
     /**
-     * Simula el recorrido con navegacion anterior/siguiente.
-     * Salida: flujo interactivo por consola.
+     * - Parámetros de entrada: Ninguno.
+     * - Salida: Ninguna (void); se ejecuta una simulación interactiva del recorrido.
+     * - Propósito: Navegar hacia adelante y hacia atrás por la ruta de distribución usando la lista doble.
      */
     private void simular() {
         if (ruta.getTamaño() == 0) {
-            System.out.println("Ruta vacia");
+            System.out.println("Ruta vacía");
             return;
         }
         ruta.iniciarRecorrido();
@@ -93,24 +98,24 @@ public class ModuloRutas {
             switch (op) {
                 case 1 -> ruta.retroceder();
                 case 2 -> ruta.avanzar();
-                default -> System.out.println("Opcion invalida");
+                default -> System.out.println("Opción inválida");
             }
         } while (op != 3);
     }
 
     /**
-     * Obtiene el total de paradas registradas.
-     *
-     * @return cantidad de paradas.
+     * - Parámetros de entrada: Ninguno.
+     * - Salida: Cantidad total de paradas registradas en la ruta.
+     * - Propósito: Conocer el tamaño actual de la ruta de distribución.
      */
     public int getTotalParadas() {
         return ruta.getTamaño();
     }
 
     /**
-     * Obtiene la primera parada programada.
-     *
-     * @return parada inicial o null.
+     * - Parámetros de entrada: Ninguno.
+     * - Salida: Primera parada de la ruta o null si no hay paradas.
+     * - Propósito: Obtener el próximo destino inicial en la ruta de distribución.
      */
     public Parada getProximaParada() {
         return (Parada) ruta.getPrimero();

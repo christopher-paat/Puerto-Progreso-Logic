@@ -5,7 +5,7 @@ import modelos.Parada;
 import utils.Entrada;
 
 /**
- * Modulo para generar el reporte general del puerto.
+ * Módulo para generar el reporte general del puerto.
  */
 public class ModuloReporteGeneral {
     private final ModuloRecepcion recepcion;
@@ -13,11 +13,9 @@ public class ModuloReporteGeneral {
     private final ModuloRutas rutas;
 
     /**
-     * Crea el modulo con referencias a otros modulos.
-     *
-     * @param recepcion modulo de recepcion.
-     * @param patio modulo de patio.
-     * @param rutas modulo de rutas.
+     * - Parámetros de entrada: recepción, patio y rutas que representan los módulos principales del sistema.
+     * - Salida: Instancia de ModuloReporteGeneral configurada con las dependencias necesarias.
+     * - Propósito: Inicializar el módulo encargado de consolidar y mostrar el estado global del puerto.
      */
     public ModuloReporteGeneral(ModuloRecepcion recepcion, ModuloPatio patio, ModuloRutas rutas) {
         this.recepcion = recepcion;
@@ -26,8 +24,9 @@ public class ModuloReporteGeneral {
     }
 
     /**
-     * Imprime el reporte general y espera confirmacion.
-     * Salida: impresion en consola.
+     * - Parámetros de entrada: Ninguno.
+     * - Salida: Ninguna (void); se imprime el reporte general y se espera confirmación por consola.
+     * - Propósito: Presentar un resumen integral del estado de recepción, patio e itinerario de rutas.
      */
     public void mostrar() {
         System.out.println("\nREPORTE GENERAL DEL PUERTO");

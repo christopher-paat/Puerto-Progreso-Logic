@@ -7,28 +7,27 @@ public class Parada {
     private String nombre;
 
     /**
-     * Crea una parada con nombre.
-     *
-     * @param nombre nombre de la parada.
+     * - Parámetros de entrada: nombre de la parada de distribución.
+     * - Salida: Objeto Parada inicializado con su nombre.
+     * - Propósito: Representar un destino dentro de la ruta de distribución de contenedores.
      */
     public Parada(String nombre) {
         this.nombre = nombre;
     }
 
     /**
-     * Obtiene el nombre de la parada.
-     *
-     * @return nombre actual.
+     * - Parámetros de entrada: Ninguno.
+     * - Salida: Nombre actual asociado a la parada.
+     * - Propósito: Consultar el identificador del destino dentro de la ruta.
      */
     public String getNombre() {
         return nombre;
     }
 
     /**
-     * Actualiza el nombre de la parada.
-     * Salida: estado actualizado.
-     *
-     * @param nombre nuevo nombre.
+     * - Parámetros de entrada: nombre con la nueva denominación de la parada.
+     * - Salida: Ninguna (void); se actualiza el nombre almacenado.
+     * - Propósito: Cambiar el nombre de una parada cuando se ajusta la ruta de distribución.
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;

@@ -1,17 +1,16 @@
 package modelos;
 
 /**
- * Representa un camion que llega al puerto.
+ * Representa un camión que llega al puerto.
  */
 public class Camion {
     private String placa;
     private String empresa;
 
     /**
-     * Crea un camion con placa y empresa.
-     *
-     * @param placa identificador del camion.
-     * @param empresa empresa transportista.
+     * - Parámetros de entrada: placa que identifica al camión y empresa transportista propietaria.
+     * - Salida: Objeto Camion configurado con sus datos básicos.
+     * - Propósito: Representar un vehículo de transporte que llega al puerto para dejar carga.
      */
     public Camion(String placa, String empresa) {
         this.placa = placa;
@@ -19,38 +18,36 @@ public class Camion {
     }
 
     /**
-     * Obtiene la placa.
-     *
-     * @return placa actual.
+     * - Parámetros de entrada: Ninguno.
+     * - Salida: Cadena con la placa registrada del camión.
+     * - Propósito: Consultar el identificador del vehículo que participa en la logística del puerto.
      */
     public String getPlaca() {
         return placa;
     }
 
     /**
-     * Actualiza la placa.
-     * Salida: estado actualizado.
-     *
-     * @param placa nueva placa.
+     * - Parámetros de entrada: placa con el nuevo identificador del camión.
+     * - Salida: Ninguna (void); el estado interno del objeto se actualiza.
+     * - Propósito: Modificar la placa asociada al camión cuando sea necesario.
      */
     public void setPlaca(String placa) {
         this.placa = placa;
     }
 
     /**
-     * Obtiene la empresa.
-     *
-     * @return empresa actual.
+     * - Parámetros de entrada: Ninguno.
+     * - Salida: Nombre de la empresa transportista asociada al camión.
+     * - Propósito: Consultar qué empresa opera el vehículo.
      */
     public String getEmpresa() {
         return empresa;
     }
 
     /**
-     * Actualiza la empresa.
-     * Salida: estado actualizado.
-     *
-     * @param empresa nueva empresa.
+     * - Parámetros de entrada: empresa con el nuevo nombre de la transportista.
+     * - Salida: Ninguna (void); el estado interno del camión se actualiza.
+     * - Propósito: Cambiar la empresa asociada al camión cuando se requiera.
      */
     public void setEmpresa(String empresa) {
         this.empresa = empresa;

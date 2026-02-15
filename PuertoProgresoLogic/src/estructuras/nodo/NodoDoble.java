@@ -9,9 +9,9 @@ public class NodoDoble {
     public NodoDoble anterior;
 
     /**
-     * Crea un nodo con dato y enlaces nulos.
-     *
-     * @param dato valor a almacenar.
+     * - Parámetros de entrada: dato que se almacenará en el nodo doble.
+     * - Salida: NodoDoble con el dato asignado y enlaces anterior y siguiente en null.
+     * - Propósito: Actuar como unidad básica para la lista doblemente ligada de paradas de ruta.
      */
     public NodoDoble(Object dato) {
         this.dato = dato;

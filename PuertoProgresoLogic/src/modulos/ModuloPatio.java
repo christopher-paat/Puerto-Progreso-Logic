@@ -7,7 +7,7 @@ import modelos.Producto;
 import utils.Entrada;
 
 /**
- * Modulo de patio de contenedores (pilas).
+ * Módulo de patio de contenedores (pilas).
  */
 public class ModuloPatio {
     private ModuloRecepcion recepcion;
@@ -16,17 +16,18 @@ public class ModuloPatio {
     private Pila pilaC = new Pila(5);
 
     /**
-     * Crea el modulo con referencia a recepcion.
-     *
-     * @param recepcion modulo de recepcion para despachar camiones.
+     * - Parámetros de entrada: recepción que provee los camiones atendidos en la cola.
+     * - Salida: Instancia de ModuloPatio inicializada con sus pilas de contenedores.
+     * - Propósito: Configurar el módulo de patio enlazado al módulo de recepción de camiones.
      */
     public ModuloPatio(ModuloRecepcion recepcion) {
         this.recepcion = recepcion;
     }
 
     /**
-     * Muestra el menu del patio y procesa opciones.
-     * Salida: flujo interactivo por consola.
+     * - Parámetros de entrada: Ninguno.
+     * - Salida: Ninguna (void); se gestiona un flujo interactivo por consola.
+     * - Propósito: Presentar y controlar el menú del patio de contenedores basado en pilas.
      */
     public void menu() {
         int op;
@@ -47,15 +48,15 @@ public class ModuloPatio {
                 case 3 -> retirar();
                 case 4 -> verTopes();
                 case 5 -> inspeccionar();
-                default -> System.out.println("Opcion invalida");
+                default -> System.out.println("Opción inválida");
             }
         } while (op != 6);
     }
 
     /**
-     * Solicita la pila objetivo para operar.
-     *
-     * @return pila seleccionada o null si es invalida.
+     * - Parámetros de entrada: Ninguno; la opción se lee desde consola.
+     * - Salida: Referencia a la pila seleccionada (A, B o C) o null si la opción es inválida.
+     * - Propósito: Elegir sobre qué columna de contenedores se realizará la operación.
      */
     private Pila elegirPila() {
         System.out.println("Seleccione pila A/B/C:");
@@ -70,8 +71,9 @@ public class ModuloPatio {
     }
 
     /**
-     * Ingresa un contenedor atendiendo el siguiente camion.
-     * Salida: pila actualizada.
+     * - Parámetros de entrada: Ninguno; los datos se obtienen de la recepción y de consola.
+     * - Salida: Ninguna (void); la pila elegida se actualiza con un nuevo contenedor.
+     * - Propósito: Ingresar al patio un contenedor proveniente del siguiente camión atendido en recepción.
      */
     private void ingresarDesdeRecepcion() {
         Camion camion = recepcion.despacharCamion();
@@ -93,8 +95,9 @@ public class ModuloPatio {
     }
 
     /**
-     * Ingresa un contenedor sin pasar por recepcion.
-     * Salida: pila actualizada.
+     * - Parámetros de entrada: Ninguno; los datos del contenedor se leen desde consola.
+     * - Salida: Ninguna (void); la pila seleccionada se actualiza con el nuevo contenedor.
+     * - Propósito: Registrar manualmente un contenedor en el patio sin depender de la cola de recepción.
      */
     private void ingresarManual() {
         Pila p = elegirPila();
@@ -108,8 +111,9 @@ public class ModuloPatio {
     }
 
     /**
-     * Retira un contenedor por codigo usando pila auxiliar.
-     * Salida: impresion del contenedor retirado.
+     * - Parámetros de entrada: Ninguno; el código del contenedor se lee desde consola.
+     * - Salida: Ninguna (void); se informa por consola el contenedor retirado si se encontró.
+     * - Propósito: Retirar del patio un contenedor específico utilizando una pila auxiliar para respetar LIFO.
      */
     private void retirar() {
         Pila p = elegirPila();
@@ -131,11 +135,9 @@ public class ModuloPatio {
     }
 
     /**
-     * Busca y retira un contenedor en una pila dada.
-     *
-     * @param p pila objetivo.
-     * @param cod codigo del contenedor.
-     * @return contenedor retirado o null si no existe.
+     * - Parámetros de entrada: p como pila objetivo y cod como código del contenedor a retirar.
+     * - Salida: Contenedor encontrado y retirado o null si no existe en la pila.
+     * - Propósito: Ubicar y extraer un contenedor concreto respetando la lógica de pilas mediante una auxiliar.
      */
     private Contenedor retirarPorCodigo(Pila p, String cod) {
         Pila aux = new Pila(p.getMax());
@@ -158,8 +160,9 @@ public class ModuloPatio {
     }
 
     /**
-     * Muestra los topes de cada pila.
-     * Salida: impresion en consola.
+     * - Parámetros de entrada: Ninguno.
+     * - Salida: Ninguna (void); se imprime el elemento en la cima de cada pila.
+     * - Propósito: Consultar rápidamente qué contenedor se encuentra en el tope de cada columna del patio.
      */
     private void verTopes() {
         System.out.println("A: " + pilaA.peek());
@@ -168,8 +171,9 @@ public class ModuloPatio {
     }
 
     /**
-     * Abre el submenu de inspeccion de contenedor.
-     * Salida: flujo interactivo por consola.
+     * - Parámetros de entrada: Ninguno.
+     * - Salida: Ninguna (void); se maneja un submenú interactivo para trabajar sobre un contenedor.
+     * - Propósito: Permitir la inspección detallada de un contenedor (productos, peso, búsquedas).
      */
     private void inspeccionar() {
         Pila p = elegirPila();
@@ -186,7 +190,7 @@ public class ModuloPatio {
 
         int op;
         do {
-            System.out.println("\nINSPECCION CONTENEDOR " + c.getCodigo());
+            System.out.println("\nINSPECCIÓN CONTENEDOR " + c.getCodigo());
             System.out.println("[1] Agregar producto");
             System.out.println("[2] Calcular peso total");
             System.out.println("[3] Buscar producto");
@@ -198,15 +202,15 @@ public class ModuloPatio {
                 case 1 -> agregarProducto(c);
                 case 2 -> System.out.println("Peso total: " + c.pesoTotal() + " kg");
                 case 3 -> buscarProducto(c);
-                default -> System.out.println("Opcion invalida");
+                default -> System.out.println("Opción inválida");
             }
         } while (op != 4);
     }
 
     /**
-     * Agrega un producto a un contenedor.
-     *
-     * @param c contenedor objetivo.
+     * - Parámetros de entrada: c como contenedor sobre el cual se agregará el producto.
+     * - Salida: Ninguna (void); la lista interna de productos del contenedor queda actualizada.
+     * - Propósito: Registrar un nuevo producto en el manifiesto de carga de un contenedor.
      */
     private void agregarProducto(Contenedor c) {
         System.out.print("Id: ");
@@ -221,10 +225,9 @@ public class ModuloPatio {
     }
 
     /**
-     * Busca un producto en un contenedor por id o nombre.
-     * Salida: impresion del resultado.
-     *
-     * @param c contenedor objetivo.
+     * - Parámetros de entrada: c como contenedor en el que se realizará la búsqueda.
+     * - Salida: Ninguna (void); se muestra por consola el resultado de la búsqueda.
+     * - Propósito: Localizar un producto dentro de un contenedor por id o por nombre.
      */
     private void buscarProducto(Contenedor c) {
         System.out.println("Buscar por: [1] Id [2] Nombre");
@@ -246,22 +249,22 @@ public class ModuloPatio {
             return;
         }
 
-        System.out.println("Opcion invalida");
+        System.out.println("Opción inválida");
     }
 
     /**
-     * Obtiene el total de contenedores del patio.
-     *
-     * @return cantidad total.
+     * - Parámetros de entrada: Ninguno.
+     * - Salida: Número total de contenedores distribuidos entre las pilas A, B y C.
+     * - Propósito: Conocer el volumen de contenedores almacenados actualmente en el patio.
      */
     public int totalContenedores() {
         return pilaA.getTamaño() + pilaB.getTamaño() + pilaC.getTamaño();
     }
 
     /**
-     * Genera un resumen del inventario por pila.
-     *
-     * @return texto con el estado de cada pila.
+     * - Parámetros de entrada: Ninguno.
+     * - Salida: Cadena de texto con el estado y peso de cada pila del patio.
+     * - Propósito: Resumir el inventario de contenedores por columna para el reporte general.
      */
     public String resumenInventario() {
         StringBuilder sb = new StringBuilder();
