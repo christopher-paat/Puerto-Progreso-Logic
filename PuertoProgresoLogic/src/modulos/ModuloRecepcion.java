@@ -4,7 +4,7 @@ import estructuras.cola.Cola;
 import modelos.Camion;
 import utils.Entrada;
 
-public class ModuloReception {
+public class ModuloRecepcion {
     private Cola colaCamiones = new Cola();
 
     public void menu() {
