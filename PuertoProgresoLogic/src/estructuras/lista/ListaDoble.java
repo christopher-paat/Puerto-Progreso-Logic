@@ -92,8 +92,7 @@ public class ListaDoble {
     public boolean insertarDespuesDeNombre(String nombreRef, Object dato) {
         NodoDoble aux = cabeza;
         while (aux != null) {
-            if (aux.dato instanceof Parada) {
-                Parada p = (Parada) aux.dato;
+            if (aux.dato instanceof Parada p) {
                 if (p.getNombre().equalsIgnoreCase(nombreRef)) {
                     NodoDoble nuevo = new NodoDoble(dato);
                     NodoDoble siguiente = aux.siguiente;
@@ -122,8 +121,7 @@ public class ListaDoble {
     public boolean eliminarPorNombre(String nombre) {
         NodoDoble aux = cabeza;
         while (aux != null) {
-            if (aux.dato instanceof Parada) {
-                Parada p = (Parada) aux.dato;
+            if (aux.dato instanceof Parada p) {
                 if (p.getNombre().equalsIgnoreCase(nombre)) {
                     NodoDoble anterior = aux.anterior;
                     NodoDoble siguiente = aux.siguiente;

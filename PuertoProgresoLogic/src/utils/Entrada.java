@@ -6,7 +6,7 @@ import java.util.Scanner;
  * Utilidad para lectura de entradas de consola con validación básica.
  */
 public class Entrada {
-    private static Scanner sc = new Scanner(System.in);
+    private static final Scanner sc = new Scanner(System.in);
 
     /**
      * - Parámetros de entrada: Ninguno; el valor se lee desde la entrada estándar.

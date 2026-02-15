@@ -8,7 +8,7 @@ import utils.Entrada;
  * Módulo de rutas de distribución (lista doble).
  */
 public class ModuloRutas {
-    private ListaDoble ruta = new ListaDoble();
+    private final ListaDoble ruta = new ListaDoble();
 
     /**
      * - Parámetros de entrada: Ninguno.

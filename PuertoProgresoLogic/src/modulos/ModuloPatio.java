@@ -10,10 +10,10 @@ import utils.Entrada;
  * Módulo de patio de contenedores (pilas).
  */
 public class ModuloPatio {
-    private ModuloRecepcion recepcion;
-    private Pila pilaA = new Pila(5);
-    private Pila pilaB = new Pila(5);
-    private Pila pilaC = new Pila(5);
+    private final ModuloRecepcion recepcion;
+    private final Pila pilaA = new Pila(5);
+    private final Pila pilaB = new Pila(5);
+    private final Pila pilaC = new Pila(5);
 
     /**
      * - Parámetros de entrada: recepción que provee los camiones atendidos en la cola.
@@ -283,5 +283,13 @@ public class ModuloPatio {
         sb.append(pilaB.resumen("B")).append("\n");
         sb.append(pilaC.resumen("C"));
         return sb.toString();
+    }
+
+    public Pila getPilaA() {
+        return pilaA;
+    }
+
+    public Pila getPilaC() {
+        return pilaC;
     }
 }

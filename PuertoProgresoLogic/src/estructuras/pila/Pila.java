@@ -9,7 +9,7 @@ import modelos.Contenedor;
 public class Pila {
     private NodoSimple cima;
     private int tamaño;
-    private int max;
+    private final int max;
 
     /**
      * - Parámetros de entrada: max que indica la capacidad máxima permitida de la pila.
@@ -108,8 +108,7 @@ public class Pila {
         double total = 0;
         NodoSimple aux = cima;
         while (aux != null) {
-            if (aux.dato instanceof Contenedor) {
-                Contenedor c = (Contenedor) aux.dato;
+            if (aux.dato instanceof Contenedor c) {
                 total += c.pesoTotal();
             }
             aux = aux.siguiente;
@@ -145,8 +144,7 @@ public class Pila {
     public Contenedor buscarContenedor(String codigo) {
         NodoSimple aux = cima;
         while (aux != null) {
-            if (aux.dato instanceof Contenedor) {
-                Contenedor c = (Contenedor) aux.dato;
+            if (aux.dato instanceof Contenedor c) {
                 if (c.getCodigo().equalsIgnoreCase(codigo)) {
                     return c;
                 }

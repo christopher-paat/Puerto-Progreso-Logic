@@ -6,8 +6,8 @@ import estructuras.lista.ListaSimple;
  * Representa un contenedor con lista de productos.
  */
 public class Contenedor {
-    private String codigo;
-    private ListaSimple productos;
+    private final String codigo;
+    private final ListaSimple productos;
 
     /**
      * - Parámetros de entrada: código identificador único del contenedor.

@@ -8,7 +8,7 @@ import utils.Entrada;
  * Módulo de recepción de camiones (colas).
  */
 public class ModuloRecepcion {
-    private Cola colaCamiones = new Cola();
+    private final Cola colaCamiones = new Cola();
 
     /**
      * - Parámetros de entrada: Ninguno.
