@@ -92,7 +92,6 @@ public class ModuloPatio {
         String cod = Entrada.leerTexto();
 
         if (p.estaLlena()) {
-            // Pila.push ya mostrará "Pila llena", no confirmamos ingreso
             p.push(new Contenedor(cod));
         } else {
             p.push(new Contenedor(cod));
@@ -114,7 +113,6 @@ public class ModuloPatio {
         String cod = Entrada.leerTexto();
 
         if (p.estaLlena()) {
-            // Pila.push ya mostrará "Pila llena", no confirmamos ingreso
             p.push(new Contenedor(cod));
         } else {
             p.push(new Contenedor(cod));
