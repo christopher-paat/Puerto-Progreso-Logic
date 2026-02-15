@@ -33,10 +33,10 @@ public class ModuloPatio {
         int op;
         do {
             System.out.println("\nPATIO");
-            System.out.println("[1] Ingresar contenedor desde Recepcion");
+            System.out.println("[1] Ingresar contenedor desde Recepción");
             System.out.println("[2] Ingresar contenedor manual");
-            System.out.println("[3] Retirar contenedor");
-            System.out.println("[4] Ver topes");
+            System.out.println("[3] Retirar contenedor para Ruta");
+            System.out.println("[4] Ver tope de las pilas");
             System.out.println("[5] Inspeccionar contenedor");
             System.out.println("[6] Volver");
 
@@ -48,6 +48,7 @@ public class ModuloPatio {
                 case 3 -> retirar();
                 case 4 -> verTopes();
                 case 5 -> inspeccionar();
+                case 6 -> {}
                 default -> System.out.println("Opción inválida");
             }
         } while (op != 6);
@@ -202,6 +203,7 @@ public class ModuloPatio {
                 case 1 -> agregarProducto(c);
                 case 2 -> System.out.println("Peso total: " + c.pesoTotal() + " kg");
                 case 3 -> buscarProducto(c);
+                case 4 -> {}
                 default -> System.out.println("Opción inválida");
             }
         } while (op != 4);

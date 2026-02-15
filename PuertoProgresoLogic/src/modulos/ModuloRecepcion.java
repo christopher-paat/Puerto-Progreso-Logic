@@ -19,11 +19,11 @@ public class ModuloRecepcion {
         int opcion;
         do {
             System.out.println("\nZONA DE RECEPCIÓN");
-            System.out.println("[1] Registrar camión");
-            System.out.println("[2] Dar ingreso");
-            System.out.println("[3] Ver próximo");
-            System.out.println("[4] Listar en espera");
-            System.out.println("[5] Volver");
+            System.out.println("[1] Registrar llegada de camión");
+            System.out.println("[2] Dar ingreso a patio");
+            System.out.println("[3] Ver próximo camión a atender");
+            System.out.println("[4] Listar todos los camiones en espera");
+            System.out.println("[5] Volver al Menú Principal");
 
             opcion = Entrada.leerInt();
 
@@ -32,6 +32,7 @@ public class ModuloRecepcion {
                 case 2 -> ingresar();
                 case 3 -> verProximo();
                 case 4 -> listar();
+                case 5 -> {}
                 default -> System.out.println("Opción inválida");
             }
         } while (opcion != 5);

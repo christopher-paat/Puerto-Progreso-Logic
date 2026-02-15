@@ -37,6 +37,7 @@ public class App {
                 case 2 -> patio.menu();
                 case 3 -> rutas.menu();
                 case 4 -> reporte.mostrar();
+                case 5 -> {}
                 default -> System.out.println("Opción inválida");
             }
         } while (opcion != 5);

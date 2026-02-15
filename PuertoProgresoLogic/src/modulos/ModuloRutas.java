@@ -19,11 +19,11 @@ public class ModuloRutas {
         int op;
         do {
             System.out.println("\nRUTAS");
-            System.out.println("[1] Agregar parada");
+            System.out.println("[1] Agregar nueva parada al final");
             System.out.println("[2] Insertar parada entre destinos");
             System.out.println("[3] Cancelar parada");
             System.out.println("[4] Simular recorrido");
-            System.out.println("[5] Volver");
+            System.out.println("[5] Volver al Menú Principal");
 
             op = Entrada.leerInt();
 
@@ -32,6 +32,7 @@ public class ModuloRutas {
                 case 2 -> insertarEntre();
                 case 3 -> cancelar();
                 case 4 -> simular();
+                case 5 -> {}
                 default -> System.out.println("Opción inválida");
             }
         } while (op != 5);
@@ -98,6 +99,7 @@ public class ModuloRutas {
             switch (op) {
                 case 1 -> ruta.retroceder();
                 case 2 -> ruta.avanzar();
+                case 3 -> {}
                 default -> System.out.println("Opción inválida");
             }
         } while (op != 3);
