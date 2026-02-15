@@ -91,8 +91,13 @@ public class ModuloPatio {
         System.out.print("Codigo del contenedor: ");
         String cod = Entrada.leerTexto();
 
-        p.push(new Contenedor(cod));
-        System.out.println("Contenedor ingresado al patio");
+        if (p.estaLlena()) {
+            // Pila.push ya mostrará "Pila llena", no confirmamos ingreso
+            p.push(new Contenedor(cod));
+        } else {
+            p.push(new Contenedor(cod));
+            System.out.println("Contenedor ingresado al patio");
+        }
     }
 
     /**
@@ -108,7 +113,13 @@ public class ModuloPatio {
         System.out.print("Código: ");
         String cod = Entrada.leerTexto();
 
-        p.push(new Contenedor(cod));
+        if (p.estaLlena()) {
+            // Pila.push ya mostrará "Pila llena", no confirmamos ingreso
+            p.push(new Contenedor(cod));
+        } else {
+            p.push(new Contenedor(cod));
+            System.out.println("Contenedor ingresado al patio");
+        }
     }
 
     /**
